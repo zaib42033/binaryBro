@@ -1,0 +1,890 @@
+@import "tailwindcss";
+
+.about-social {
+  display: flex;
+
+  height: 47px;
+  width: 47px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #64748b;
+
+  font-size: 20px;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-social:hover {
+  color: #22d3ee;
+
+  border-color: rgba(34, 211, 238, 0.3);
+
+  background: rgba(34, 211, 238, 0.05);
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.08);
+}
+
+
+
+
+
+.skills-orbit {
+  animation: skillsRotate 35s linear infinite;
+  will-change: transform;
+}
+
+.skills-counter {
+  animation: skillsCounterRotate 35s linear infinite;
+  will-change: transform;
+}
+
+@keyframes skillsRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes skillsCounterRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+
+
+
+/* =========================================
+   PROJECT CARD AURA
+========================================= */
+
+.project-aura {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 40deg,
+    var(--project-color) 80deg,
+    transparent 120deg,
+    transparent 200deg,
+    var(--project-color) 250deg,
+    transparent 300deg,
+    transparent 360deg
+  );
+
+  opacity: 0.65;
+  filter: blur(4px);
+
+  animation: projectAura 6s linear infinite;
+}
+
+.project-aura::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 3px;
+
+  border-radius: 21px;
+
+  background: #080b14;
+}
+
+/* =========================================
+   HOVER
+========================================= */
+
+.project-aura {
+  transition:
+    opacity 0.3s ease,
+    filter 0.3s ease;
+}
+
+.project-aura:hover {
+  opacity: 0.95;
+  filter: blur(5px);
+}
+
+/* =========================================
+   AURA ROTATION
+========================================= */
+
+@keyframes projectAura {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* =========================================================
+   TESTIMONIAL AURA
+========================================================= */
+
+.testimonial-aura {
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 45deg,
+    var(--card-color) 90deg,
+    transparent 135deg,
+    transparent 210deg,
+    var(--card-color) 270deg,
+    transparent 315deg,
+    transparent 360deg
+  );
+
+  opacity: 0.55;
+  filter: blur(4px);
+
+  animation: testimonialAura 7s linear infinite;
+
+  pointer-events: none;
+}
+
+.testimonial-aura::after {
+  content: "";
+
+  position: absolute;
+  inset: 3px;
+
+  border-radius: 15px;
+
+  background: #090d16;
+}
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.testimonial-card {
+  min-height: 205px;
+}
+
+.group:hover .testimonial-aura {
+  opacity: 0.9;
+  filter: blur(5px);
+}
+
+/* =========================================================
+   AURA ROTATION
+========================================================= */
+
+@keyframes testimonialAura {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   CENTER CIRCLE RINGS
+========================================================= */
+
+.reaction-ring {
+  position: absolute;
+
+  border-radius: 9999px;
+
+  pointer-events: none;
+}
+
+.reaction-ring-one {
+  width: 290px;
+  height: 290px;
+
+  border: 1px solid rgba(34, 211, 238, 0.08);
+
+  animation: reactionPulse 4s ease-in-out infinite;
+}
+
+.reaction-ring-two {
+  width: 330px;
+  height: 330px;
+
+  border: 1px solid rgba(139, 92, 246, 0.05);
+
+  animation: reactionPulse 5s ease-in-out infinite reverse;
+}
+
+@keyframes reactionPulse {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: scale(1.04);
+    opacity: 0.9;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1023px) {
+  .testimonial-card {
+    min-height: 190px;
+  }
+
+  .reaction-ring-one {
+    width: 190px;
+    height: 190px;
+  }
+
+  .reaction-ring-two {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .testimonial-card {
+    min-height: 180px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-aura,
+  .reaction-ring-one,
+  .reaction-ring-two {
+    animation: none;
+  }
+}
+
+
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+.contact-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 330px;
+  width: 100%;
+}
+
+/* Image glow */
+
+.contact-image-glow {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+
+  border-radius: 50%;
+
+  background: rgba(34, 211, 238, 0.12);
+
+  filter: blur(70px);
+
+  animation: contactGlow 5s ease-in-out infinite;
+}
+
+/* Orbit */
+
+.contact-orbit {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(34, 211, 238, 0.12);
+
+  pointer-events: none;
+}
+
+.contact-orbit-one {
+  width: 260px;
+  height: 260px;
+
+  animation: contactOrbit 12s linear infinite;
+}
+
+.contact-orbit-two {
+  width: 320px;
+  height: 320px;
+
+  border-color: rgba(139, 92, 246, 0.08);
+
+  animation: contactOrbit 16s linear infinite reverse;
+}
+
+/* =========================================================
+   FORM AURA
+========================================================= */
+
+.contact-form-aura {
+  position: absolute;
+
+  inset: -2px;
+
+  border-radius: 18px;
+
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 70deg,
+    rgba(34, 211, 238, 0.8) 110deg,
+    transparent 150deg,
+    transparent 220deg,
+    rgba(139, 92, 246, 0.8) 270deg,
+    transparent 310deg,
+    transparent 360deg
+  );
+
+  opacity: 0.45;
+
+  filter: blur(4px);
+
+  animation: contactAura 8s linear infinite;
+
+  pointer-events: none;
+}
+
+.contact-form-aura::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 3px;
+
+  border-radius: 15px;
+
+  background: #090d16;
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.contact-input {
+  width: 100%;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  padding: 11px 13px;
+
+  font-size: 12px;
+
+  color: white;
+
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact-input::placeholder {
+  color: #475569;
+}
+
+.contact-input:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.contact-input:focus {
+  border-color: rgba(34, 211, 238, 0.55);
+
+  background: rgba(34, 211, 238, 0.035);
+
+  box-shadow:
+    0 0 0 3px rgba(34, 211, 238, 0.05),
+    0 0 25px rgba(34, 211, 238, 0.06);
+}
+
+/* Select */
+
+.contact-input option {
+  background: #090d16;
+
+  color: white;
+}
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.contact-submit {
+  border: 1px solid rgba(34, 211, 238, 0.3);
+
+  border-radius: 9px;
+
+  background: linear-gradient(
+    90deg,
+    #0891b2,
+    #2563eb
+  );
+
+  padding: 12px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+.contact-submit:hover {
+  transform: translateY(-2px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 0 20px rgba(34, 211, 238, 0.2),
+    0 0 45px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================================================
+   SOCIAL BUTTONS
+========================================================= */
+
+.contact-social {
+  display: flex;
+
+  height: 36px;
+  width: 36px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact-social:hover {
+  transform: translateY(-3px);
+
+  color: #22d3ee;
+
+  border-color: rgba(34, 211, 238, 0.35);
+
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.08);
+}
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.contact-stars {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.contact-stars span {
+  position: absolute;
+
+  width: 2px;
+  height: 2px;
+
+  border-radius: 50%;
+
+  background: #cbd5e1;
+
+  opacity: 0.45;
+
+  animation: contactStar 4s ease-in-out infinite;
+}
+
+.contact-stars span:nth-child(1) {
+  left: 8%;
+  top: 18%;
+}
+
+.contact-stars span:nth-child(2) {
+  left: 18%;
+  top: 65%;
+  animation-delay: 1s;
+}
+
+.contact-stars span:nth-child(3) {
+  left: 31%;
+  top: 25%;
+  animation-delay: 2s;
+}
+
+.contact-stars span:nth-child(4) {
+  left: 45%;
+  top: 75%;
+  animation-delay: 0.5s;
+}
+
+.contact-stars span:nth-child(5) {
+  left: 57%;
+  top: 17%;
+  animation-delay: 1.5s;
+}
+
+.contact-stars span:nth-child(6) {
+  left: 69%;
+  top: 72%;
+  animation-delay: 2.5s;
+}
+
+.contact-stars span:nth-child(7) {
+  left: 79%;
+  top: 22%;
+  animation-delay: 0.8s;
+}
+
+.contact-stars span:nth-child(8) {
+  left: 91%;
+  top: 55%;
+  animation-delay: 1.8s;
+}
+
+.contact-stars span:nth-child(9) {
+  left: 12%;
+  top: 40%;
+  animation-delay: 2.2s;
+}
+
+.contact-stars span:nth-child(10) {
+  left: 84%;
+  top: 38%;
+  animation-delay: 0.3s;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes contactAura {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes contactOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes contactGlow {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes contactStar {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.5);
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .contact-visual {
+    min-height: 250px;
+  }
+
+  .contact-orbit-one {
+    width: 200px;
+    height: 200px;
+  }
+
+  .contact-orbit-two {
+    width: 245px;
+    height: 245px;
+  }
+
+  .contact-image-glow {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .contact-visual {
+    min-height: 220px;
+  }
+
+  .contact-orbit-one {
+    width: 175px;
+    height: 175px;
+  }
+
+  .contact-orbit-two {
+    width: 215px;
+    height: 215px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-form-aura,
+  .contact-orbit,
+  .contact-image-glow,
+  .contact-stars span {
+    animation: none;
+  }
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer-aura-line {
+  position: absolute;
+
+  left: 10%;
+  right: 10%;
+  top: 0;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(34, 211, 238, 0.7),
+    rgba(139, 92, 246, 0.7),
+    transparent
+  );
+
+  opacity: 0.65;
+
+  animation: footerLineGlow 4s ease-in-out infinite;
+}
+
+/* =========================================
+   FOOTER LINKS
+========================================= */
+
+.footer-link {
+  width: fit-content;
+
+  font-size: 12px;
+
+  color: #64748b;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.footer-link:hover {
+  color: #22d3ee;
+
+  transform: translateX(4px);
+}
+
+/* =========================================
+   SOCIAL BUTTONS
+========================================= */
+
+.footer-social {
+  display: flex;
+
+  height: 34px;
+  width: 34px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.footer-social:hover {
+  color: #22d3ee;
+
+  border-color: rgba(34, 211, 238, 0.3);
+
+  background: rgba(34, 211, 238, 0.05);
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.08);
+}
+
+/* =========================================
+   BACK TO TOP
+========================================= */
+
+.footer-top-button {
+  display: flex;
+
+  height: 34px;
+  width: 34px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(34, 211, 238, 0.2);
+
+  border-radius: 9px;
+
+  background: rgba(34, 211, 238, 0.04);
+
+  color: #22d3ee;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.footer-top-button:hover {
+  transform: translateY(-3px);
+
+  background: rgba(34, 211, 238, 0.1);
+
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.12);
+}
+
+/* =========================================
+   AURA ANIMATION
+========================================= */
+
+@keyframes footerLineGlow {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 639px) {
+  .footer-aura-line {
+    left: 5%;
+    right: 5%;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-aura-line {
+    animation: none;
+  }
+}
