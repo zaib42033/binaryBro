@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logoImage from "../../assets/logo.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -262,7 +263,7 @@ const Navbar = () => {
                   className="shrink-0"
                 >
                   <img
-                    src={"src/assets/logo.png"}
+                    src={logoImage}
                     alt="Orangzaib Malik"
                     className="h-10 w-auto object-contain"
                   />

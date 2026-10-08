@@ -1,12 +1,16 @@
 import { motion } from "framer-motion";
 import { FaQuoteLeft, FaStar, FaCheckCircle } from "react-icons/fa";
+import person1 from "../assets/person-1.jpg";
+import person2 from "../assets/person-2.jpg";
+import person3 from "../assets/person-3.jpg";
+import person4 from "../assets/person-4.jpg";
 
 const testimonials = [
   {
     id: 1,
     name: "Mr Saud",
     role: "Client",
-    image: "src/assets/person-1.jpg",
+    image: person1,
     message:
       "Working with him was a smooth experience. He understood the idea quickly and turned it into a clean website.",
     color: "#22d3ee",
@@ -15,7 +19,7 @@ const testimonials = [
     id: 2,
     name: "Mr Abid",
     role: "Client",
-    image: "src/assets/person-2.jpg",
+    image: person2,
     message:
       "The design was clean, modern and responsive. The final result was much better than I expected.",
     color: "#8b5cf6",
@@ -24,7 +28,7 @@ const testimonials = [
     id: 3,
     name: "Mr Ali",
     role: "Client",
-    image: "src/assets/person-3.jpg",
+    image: person3,
     message:
       "Very creative work with great attention to detail. Everything felt natural and easy to use.",
     color: "#ec4899",
@@ -33,7 +37,7 @@ const testimonials = [
     id: 4,
     name: "Mr Khan",
     role: "Client",
-    image: "src/assets/person-4.jpg",
+    image: person4,
     message:
       "Communication was easy and the final website looked professional on both desktop and mobile.",
     color: "#22c55e",

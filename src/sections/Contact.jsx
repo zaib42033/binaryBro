@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaPaperPlane, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import contactImage from "../assets/Contact.png";
 
 const Contact = () => {
   return (
@@ -110,7 +111,7 @@ const Contact = () => {
             <div className="contact-image-glow" />
 
             <motion.img
-              src="src/assets/Contact.png"
+              src={contactImage}
               alt="Let's work together"
               animate={{
                 y: [0, -10, 0],

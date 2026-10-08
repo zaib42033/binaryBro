@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import TypingText from "./TypingText";
 import { FaLinkedin, FaWhatsapp, FaInstagram, FaFacebook, } from "react-icons/fa";
+import dpImage from "../../assets/Dpimg.png";
 
 const Hero = () => {
   return (
@@ -94,7 +95,7 @@ const Hero = () => {
           className="w-[300px] shrink-0 justify-center md:flex lg:w-[430px] "
         >
           <img
-            src={"src/assets/Dpimg.png"}
+            src={dpImage}
             alt="Orangzaib Malik"
             className="w-full max-w-[410px] object-contain"
           />

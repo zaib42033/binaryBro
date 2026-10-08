@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import dpImage2 from "../assets/dpimage.png";
 
 const About = () => {
   return (
@@ -26,7 +27,7 @@ const About = () => {
 
               <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-2 transition-colors duration-300 group-hover:border-cyan-400/30 cursor-pointer">
                 <img
-                  src={"src/assets/dpImage.png"}
+                  src={dpImage2}
                   alt="Salim Malik"
                   className="h-64 w-52 rounded-xl object-cover transition-transform duration-500 group-hover:scale-[1.03] sm:h-72 sm:w-56 lg:h-80 lg:w-64"
                 />

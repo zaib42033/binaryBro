@@ -1,6 +1,16 @@
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { FaGithub, FaArrowRight } from "react-icons/fa";
+import project1 from "../assets/project-1.png";
+import project1_1 from "../assets/project-1.1.png";
+import project2 from "../assets/project-2.png";
+import project2_1 from "../assets/project-2.1.png";
+import project3 from "../assets/project-3.png";
+import project3_1 from "../assets/project-3.1.png";
+import project4 from "../assets/project-4.png";
+import project4_1 from "../assets/project-4.1.png";
+import project5 from "../assets/project-5.png";
+import project5_1 from "../assets/project-5.1.png";
 
 const projects = [
   {
@@ -9,8 +19,8 @@ const projects = [
     type: "E-Commerce",
     description:
       "A modern electronics shopping experience with a clean and interactive interface.",
-    image: "src/assets/project-1.png",
-    image2: "src/assets/project-1.1.png",
+    image: project1,
+    image2: project1_1,
     color: "#22d3ee",
     tech: ["React", "Tailwind", "Framer Motion"],
     link: "https://novaelec.netlify.app/",
@@ -21,8 +31,8 @@ const projects = [
     type: "Web Application",
     description:
       "A modern restaurant ordering system with a user-friendly interface.",
-    image: "src/assets/project-2.png",
-    image2: "src/assets/project-2.1.png",
+    image: project2,
+    image2: project2_1,
     color: "#a78bfa",
     tech: ["React", "API", "CSS"],
     link: "#",
@@ -33,8 +43,8 @@ const projects = [
     type: "Portfolio",
     description:
       "A personal portfolio focused on clean design, typography and subtle interaction.",
-    image: "src/assets/project-3.png",
-    image2: "src/assets/project-3.1.png",
+    image: project3,
+    image2: project3_1,
     color: "#f472b6",
     tech: ["React", "Framer Motion", "Tailwind"],
     link: "#",
@@ -45,8 +55,8 @@ const projects = [
     type: "Web Application",
     description:
       "A responsive dashboard designed around clarity and simple interaction.",
-    image: "src/assets/project-4.png",
-    image2: "src/assets/project-4.1.png",
+    image: project4,
+    image2: project4_1,
     color: "#f59e0b",
     tech: ["React", "Charts", "Tailwind"],
     link: "#",
@@ -57,8 +67,8 @@ const projects = [
     type: "Frontend",
     description:
       "A polished responsive landing page with strong visual hierarchy.",
-    image: "src/assets/project-5.png",
-    image2: "src/assets/project-5.1.png",
+    image: project5,
+    image2: project5_1,
     color: "#4ade80",
     tech: ["React", "CSS", "JavaScript"],
     link: "#",
