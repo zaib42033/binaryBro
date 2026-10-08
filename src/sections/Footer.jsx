@@ -47,15 +47,15 @@ const Footer = () => {
             {/* Socials */}
 
             <div className="mt-6 flex gap-2">
-              <a href="#" aria-label="GitHub" className="footer-social">
+              <a href="https://github.com/" aria-label="GitHub" className="footer-social">
                 <FaGithub />
               </a>
 
-              <a href="#" aria-label="LinkedIn" className="footer-social">
+              <a href="https://www.linkedin.com/in/orangzaib-malik-550584394" aria-label="LinkedIn" className="footer-social">
                 <FaLinkedinIn />
               </a>
 
-              <a href="#" aria-label="Instagram" className="footer-social">
+              <a href="https://www.instagram.com/zaib7here" aria-label="Instagram" className="footer-social">
                 <FaInstagram />
               </a>
             </div>

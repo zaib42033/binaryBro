@@ -1,8 +1,42 @@
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { FaPaperPlane, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import contactImage from "../assets/Contact.png";
 
 const Contact = () => {
+  const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState("");
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    // Keep a stable reference to the form before the async request.
+    // React's event currentTarget can become unavailable after await.
+    const form = e.currentTarget;
+
+    setSending(true);
+    setStatus("");
+
+    try {
+      await emailjs.sendForm(
+        "service_fp32tcy",
+        "template_rz1nxi6",
+        form,
+        "_I7VotOI0M0tLEM5i"
+      );
+
+      // EmailJS succeeded, so show success and then reset the form.
+      setStatus("success");
+      form.reset();
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setStatus("error");
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -150,7 +184,7 @@ const Contact = () => {
 
           <div className="mt-6 flex gap-3">
             <a
-              href="https://github.com/zaib42033"
+              href="https://github.com/"
               className="
                 contact-social
                 group
@@ -170,7 +204,7 @@ const Contact = () => {
             </a>
 
             <a
-              href="salimxzaib@gmail.com"
+              href="mailto:salimxzaib@gmail.com"
               className="
                 contact-social
                 group
@@ -224,7 +258,7 @@ const Contact = () => {
               </p>
             </div>
 
-            <form className="space-y-4">
+            <form onSubmit={sendEmail} className="space-y-4">
               {/* Name */}
 
               <div>
@@ -235,8 +269,10 @@ const Contact = () => {
 
                 <input
                   type="text"
+                  name="name"
                   placeholder="Your name"
                   className="contact-input"
+                  required
                 />
               </div>
 
@@ -250,8 +286,10 @@ const Contact = () => {
 
                 <input
                   type="email"
+                  name="email"
                   placeholder="you@example.com"
                   className="contact-input"
+                  required
                 />
               </div>
 
@@ -262,12 +300,12 @@ const Contact = () => {
                   Service Needed
                 </label>
 
-                <select className="contact-input">
-                  <option value="">Something in mind?</option>
-                  <option value="website">Website Development</option>
-                  <option value="portfolio">Portfolio Website</option>
-                  <option value="frontend">Frontend Development</option>
-                  <option value="other">Something Else</option>
+                <select name="subject" className="contact-input" required defaultValue="">
+                  <option value="" disabled>Something in mind?</option>
+                  <option value="Website Development">Website Development</option>
+                  <option value="Portfolio Website">Portfolio Website</option>
+                  <option value="Frontend Development">Frontend Development</option>
+                  <option value="Something Else">Something Else</option>
                 </select>
               </div>
 
@@ -280,9 +318,11 @@ const Contact = () => {
                 </label>
 
                 <textarea
+                  name="message"
                   rows="5"
                   placeholder="Tell me about your idea..."
                   className="contact-input resize-none"
+                  required
                 />
               </div>
 
@@ -290,6 +330,7 @@ const Contact = () => {
 
               <button
                 type="submit"
+                disabled={sending}
                 className="
                   contact-submit
                   group
@@ -298,12 +339,26 @@ const Contact = () => {
                   items-center
                   justify-center
                   gap-2
+                  disabled:cursor-not-allowed
+                  disabled:opacity-60
                 "
               >
-                <span>Send Message</span>
+                <span>{sending ? "Sending..." : "Send Message"}</span>
 
                 <FaPaperPlane className="text-xs transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
               </button>
+
+              {status === "success" && (
+                <p className="pt-1 text-center text-xs font-medium text-cyan-400">
+                  Message sent successfully. I'll get back to you soon.
+                </p>
+              )}
+
+              {status === "error" && (
+                <p className="pt-1 text-center text-xs font-medium text-rose-400">
+                  Something went wrong. Please try again.
+                </p>
+              )}
             </form>
           </div>
         </motion.div>
