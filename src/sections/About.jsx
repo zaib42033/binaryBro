@@ -62,9 +62,9 @@ const About = () => {
 
             <p className="mt-3 lg:mt-5 text-base font-medium leading-7 text-slate-400 sm:text-lg">
               Hi, I'm Salim Malik and I live in Ahmad Pur East and I am doing
-              ICS. I am also a student of Islamic studies at Lodhran. I am
-              obsessed with coding from my childhood and that's why now I am a
-              very passionate frontend web developer.
+              ICS. I am also a student of Islamic studies.And I am obsessed with
+              coding from my childhood and that's why now I am a very passionate
+              frontend web developer.
             </p>
 
             {/* Information Cards */}

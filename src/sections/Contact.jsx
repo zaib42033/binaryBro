@@ -149,7 +149,7 @@ const Contact = () => {
 
           <div className="mt-6 flex gap-3">
             <a
-              href="#"
+              href="https://github.com/zaib42033"
               className="
                 contact-social
                 group
@@ -159,7 +159,7 @@ const Contact = () => {
             </a>
 
             <a
-              href="#"
+              href="https://www.linkedin.com/in/orangzaib-malik-550584394"
               className="
                 contact-social
                 group
@@ -169,7 +169,7 @@ const Contact = () => {
             </a>
 
             <a
-              href="mailto:your@email.com"
+              href="salimxzaib@gmail.com"
               className="
                 contact-social
                 group

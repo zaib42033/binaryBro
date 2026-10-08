@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import TypingText from "./TypingText";
-import { FaGithub, FaWhatsapp, FaInstagram, FaFacebook, } from "react-icons/fa";
+import { FaLinkedin, FaWhatsapp, FaInstagram, FaFacebook, } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -52,19 +52,35 @@ const Hero = () => {
           </div>
 
           <div className="mt-3 mb-3  md:mt-5 flex gap-5">
-            <a href="#" aria-label="GitHub" className="about-social">
-              <FaGithub />
+            <a
+              href="https://www.linkedin.com/in/orangzaib-malik-550584394"
+              aria-label="LinkedIn"
+              className="about-social"
+            >
+              <FaLinkedin />
             </a>
 
-            <a href="#" aria-label="LinkedIn" className="about-social">
+            <a
+              href="https://wa.me/03247025159"
+              aria-label="WhatsApp"
+              className="about-social"
+            >
               <FaWhatsapp />
             </a>
 
-            <a href="#" aria-label="Instagram" className="about-social">
+            <a
+              href="https://www.instagram.com/zaib7here"
+              aria-label="Instagram"
+              className="about-social"
+            >
               <FaInstagram />
             </a>
 
-            <a href="#" aria-label="Instagram" className="about-social">
+            <a
+              href="https://www.facebook.com/orangzaib.zaib.3956"
+              aria-label="Facebook"
+              className="about-social"
+            >
               <FaFacebook />
             </a>
           </div>
