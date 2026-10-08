@@ -56,7 +56,7 @@ const Navbar = () => {
             className="relative z-10 shrink-0 cursor-pointer"
           >
             <img
-              src={"src/assets/logo.png"}
+              src={logoImage}
               alt="Orangzaib Malik"
               className="h-10 w-auto object-contain "
             />
